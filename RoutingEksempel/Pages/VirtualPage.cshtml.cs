@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RoutingEksempel.Pages.Info
+namespace RoutingEksempel.Pages
 {
-    public class IndexModel : PageModel
+    public class VirtualPageModel : PageModel
     {
-
-        [BindProperty(SupportsGet = true)] public string message { get; set; } 
-
         public void OnGet()
         {
         }

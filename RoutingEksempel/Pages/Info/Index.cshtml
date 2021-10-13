@@ -1,7 +1,13 @@
-﻿@page
+﻿@page "{message?}"
 @model RoutingEksempel.Pages.Info.IndexModel
+
+@{
+    ViewData["Title"] = "info index";
+}
 
 <h1>Info index</h1>
 
-@{
+@if (!string.IsNullOrEmpty(Model.message))
+{
+    <h1>Hello @Model.message</h1>
 }

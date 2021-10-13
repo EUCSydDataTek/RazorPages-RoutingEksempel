@@ -9,8 +9,12 @@ namespace RoutingEksempel.Pages.Info
 {
     public class aboutModel : PageModel
     {
-        public void OnGet()
+
+        public string Name { get; set; }
+
+        public void OnGet(string FirstName,string LastName)
         {
+            Name = $"{FirstName} {LastName}";
         }
     }
 }

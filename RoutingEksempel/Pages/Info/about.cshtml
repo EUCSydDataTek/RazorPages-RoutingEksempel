@@ -1,7 +1,9 @@
-﻿@page
-@model RoutingEksempel.Pages.Info.aboutModel
-
-<h1>About</h1>
+﻿@page "{FirstName}/{LastName}"
 
 @{
+    ViewData["Title"] = "about";
 }
+
+@model RoutingEksempel.Pages.Info.aboutModel
+<h1>Hello @Model.Name</h1>
+

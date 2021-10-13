@@ -1,0 +1,9 @@
+﻿@page "{type}/{a:double:int}/{b:double:int}"
+@model RoutingEksempel.Pages.calc.CalculateModel
+
+@{
+    ViewData["Title"] = "Calculate";
+}
+
+<p>Calculation: @Model.Calculation</p>
+<h1>Result: @Model.Result</h1>
