@@ -1,0 +1,75 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization
+@model RoutingEksempel.Pages.RoutesModel
+
+<h1>Routes</h1>
+
+@foreach (var descriptor in Model.descriptors)
+{
+    
+    <div class="card">
+        <div class="card-body">
+            <h1>@descriptor.DisplayName</h1>
+            <p>id: @descriptor.Id</p>
+            <p>Template: @descriptor.AttributeRouteInfo.Template</p>
+            <br />
+            <h4>RouteValues</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Key</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var par in descriptor.RouteValues)
+                    {
+                        <tr>
+                            <th scope="row">@par.Key</th>
+                            <td>@par.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <h4>Parameters</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Parametertype</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var par in descriptor.Parameters)
+                    {
+                        <tr>
+                            <th scope="row">@par.Name</th>
+                            <td>@par.ParameterType</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <h4>Properties</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Key</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var prop in descriptor.Properties)
+                    {
+                        <tr>
+                            <th scope="row">@prop.Key</th>
+                            <td>@prop.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+}
