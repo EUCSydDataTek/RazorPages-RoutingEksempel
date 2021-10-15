@@ -29,7 +29,7 @@ namespace RoutingEksempel.Pages
         public void OnGet()
         {
 
-            Link1 = Url.Page("Privacy");
+            Link1 = Url.Page("Privacy"); //_linkGenerator.GetUriByPage(HttpContext, "Privacy");
 
             Link2 = Url.Page("info/about", new { FirstName = "Jakob", LastName = "Spiel" });
 
