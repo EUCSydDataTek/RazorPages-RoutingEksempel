@@ -22,11 +22,11 @@ namespace RoutingEksempel.Pages
             _provider = provider;
         }
 
-        public IReadOnlyList<ActionDescriptor> descriptors { get; set; }
+        public IReadOnlyList<CompiledPageActionDescriptor> descriptors { get; set; }
 
         public void OnGet()
         {
-            descriptors = _provider.ActionDescriptors.Items;
+            descriptors = _provider.ActionDescriptors.Items.Select(i => i as CompiledPageActionDescriptor).ToList();
         }
     }
 }

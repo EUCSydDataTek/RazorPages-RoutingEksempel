@@ -24,7 +24,7 @@ namespace RoutingEksempel.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public void OnGet(int errorcode)
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
